@@ -10,6 +10,11 @@
 #define SWAP_UINT16(x) (((x) << 8) & 0xff00 | ((x) >> 8)) //bswap16
 #define SWAP_UINT32(x) (((x) >> 24) | (((x) & 0x00FF0000) >> 8) | (((x) & 0x0000FF00) << 8) | ((x) << 24))
 
+#undef MIN
+#undef MAX
+#define MIN(a, b)   (((a) < (b)) ? (a) : (b))
+#define MAX(a, b)   (((a) > (b)) ? (a) : (b))
+
 void test_defines(void)
 {
 	printf("sizeof(uint8_t): %0lx\n", sizeof(uint8_t));    // 1
